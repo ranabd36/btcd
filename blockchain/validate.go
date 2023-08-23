@@ -11,11 +11,11 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/btcsuite/btcd/btcutil"
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
+	"github.com/ranabd36/btcd/btcutil"
+	"github.com/ranabd36/btcd/chaincfg"
+	"github.com/ranabd36/btcd/chaincfg/chainhash"
+	"github.com/ranabd36/btcd/txscript"
+	"github.com/ranabd36/btcd/wire"
 )
 
 const (

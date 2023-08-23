@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/btcsuite/btcd/btcutil"
 	flags "github.com/jessevdk/go-flags"
+	"github.com/ranabd36/btcd/btcutil"
 )
 
 type config struct {

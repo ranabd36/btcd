@@ -9,9 +9,9 @@ import (
 	"errors"
 	"io"
 
-	"github.com/btcsuite/btcd/btcec/v2"
-	"github.com/btcsuite/btcd/btcec/v2/schnorr"
-	"github.com/btcsuite/btcd/chaincfg/chainhash"
+	"github.com/ranabd36/btcd/btcec/v2"
+	"github.com/ranabd36/btcd/btcec/v2/schnorr"
+	"github.com/ranabd36/btcd/chaincfg/chainhash"
 )
 
 const (

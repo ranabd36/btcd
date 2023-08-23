@@ -14,9 +14,9 @@ import (
 	"bytes"
 	"crypto/sha256"
 
-	"github.com/btcsuite/btcd/btcutil"
-	"github.com/btcsuite/btcd/txscript"
-	"github.com/btcsuite/btcd/wire"
+	"github.com/ranabd36/btcd/btcutil"
+	"github.com/ranabd36/btcd/txscript"
+	"github.com/ranabd36/btcd/wire"
 )
 
 // Updater encapsulates the role 'Updater' as specified in BIP174; it accepts

@@ -1,4 +1,4 @@
-PKG := github.com/btcsuite/btcd
+PKG := github.com/ranabd36/btcd
 
 LINT_PKG := github.com/golangci/golangci-lint/cmd/golangci-lint
 GOACC_PKG := github.com/ory/go-acc
@@ -13,7 +13,7 @@ GOACC_COMMIT := 80342ae2e0fcf265e99e76bcc4efd022c7c3811b
 
 DEPGET := cd /tmp && GO111MODULE=on go get -v
 GOBUILD := GO111MODULE=on go build -v
-GOINSTALL := GO111MODULE=on go install -v 
+GOINSTALL := GO111MODULE=on go install -v
 DEV_TAGS := rpctest
 GOTEST_DEV = GO111MODULE=on go test -v -tags=$(DEV_TAGS)
 GOTEST := GO111MODULE=on go test -v
@@ -87,7 +87,7 @@ unit:
 unit-cover: $(GOACC_BIN)
 	@$(call print, "Running unit coverage tests.")
 	$(GOACC_BIN) ./...
-	
+
 	# We need to remove the /v2 pathing from the module to have it work
 	# nicely with the CI tool we use to render live code coverage.
 	cd btcec; $(GOACC_BIN) ./...; sed -i.bak 's/v2\///g' coverage.txt

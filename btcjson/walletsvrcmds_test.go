@@ -11,8 +11,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/btcsuite/btcd/btcjson"
-	"github.com/btcsuite/btcd/btcutil"
+	"github.com/ranabd36/btcd/btcjson"
+	"github.com/ranabd36/btcd/btcutil"
 )
 
 // TestWalletSvrCmds tests all of the wallet server commands marshal and
@@ -1210,26 +1210,27 @@ func TestWalletSvrCmds(t *testing.T) {
 				return btcjson.NewCmd("sendtoaddress", "1Address", 0.5)
 			},
 			staticCmd: func() interface{} {
-				return btcjson.NewSendToAddressCmd("1Address", 0.5, nil, nil)
+				return btcjson.NewSendToAddressCmd("1Address", 0.5, nil, nil, nil)
 			},
 			marshalled: `{"jsonrpc":"1.0","method":"sendtoaddress","params":["1Address",0.5],"id":1}`,
 			unmarshalled: &btcjson.SendToAddressCmd{
-				Address:   "1Address",
-				Amount:    0.5,
-				Comment:   nil,
-				CommentTo: nil,
+				Address:               "1Address",
+				Amount:                0.5,
+				Comment:               nil,
+				CommentTo:             nil,
+				SubtractFeeFromAmount: nil,
 			},
 		},
 		{
 			name: "sendtoaddress optional1",
 			newCmd: func() (interface{}, error) {
-				return btcjson.NewCmd("sendtoaddress", "1Address", 0.5, "comment", "commentto")
+				return btcjson.NewCmd("sendtoaddress", "1Address", 0.5, "comment", "commentto", true)
 			},
 			staticCmd: func() interface{} {
 				return btcjson.NewSendToAddressCmd("1Address", 0.5, btcjson.String("comment"),
-					btcjson.String("commentto"))
+					btcjson.String("commentto"), btcjson.Bool(true))
 			},
-			marshalled: `{"jsonrpc":"1.0","method":"sendtoaddress","params":["1Address",0.5,"comment","commentto"],"id":1}`,
+			marshalled: `{"jsonrpc":"1.0","method":"sendtoaddress","params":["1Address",0.5,"comment","commentto",true],"id":1}`,
 			unmarshalled: &btcjson.SendToAddressCmd{
 				Address:   "1Address",
 				Amount:    0.5,
